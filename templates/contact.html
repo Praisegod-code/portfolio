@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chinwe — Contact</title>
+<style>
+  :root{
+    --bg-dark: #0A0A0F;      
+    --card-dark: #15151D;    
+    --teal-accent: #00D9B8;  
+    --teal-glow: rgba(0,217,184,0.4);
+    --text-light: #E5E7EB;   
+    --text-muted: #9CA3AF;   
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI', Arial, sans-serif;
+    margin:0;
+    background:var(--bg-dark);
+    color:var(--text-light);
+  }
+  
+  /* NAV WITH GREEN BORDERS */
+  nav{
+    background:rgba(10,10,15,0.7);
+    backdrop-filter: blur(10px);
+    padding:14px 40px;
+    position:sticky;
+    top:0;
+    z-index:10;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    border-bottom: 1px solid var(--card-dark);
+  }
+  nav a{
+    color:var(--text-light);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:8px 18px;
+    border:1.5px solid var(--teal-accent);
+    border-radius:999px;
+    transition: all 0.25s ease;
+  }
+  nav a:hover{
+    background:var(--teal-accent);
+    color:var(--bg-dark);
+    box-shadow:0 0 16px var(--teal-glow);
+    transform: translateY(-2px);
+  }
+  
+  /* CONTENT + GLASS CARD */
+  .content{
+    padding:80px 40px;
+    max-width:700px;
+    margin:0 auto;
+  }
+  .card{
+    background:rgba(21,21,29,0.6);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:40px;
+    border:1px solid rgba(0,217,184,0.15);
+    box-shadow:0 8px 30px rgba(0,0,0,0.3);
+  }
+  .hero-title{
+    text-align:center;
+    margin-bottom:32px;
+  }
+  .hero-title h1{
+    font-size:2.4rem;
+    margin:0 0 8px;
+    font-weight:800;
+  }
+  .hero-title h1 span{
+    color:var(--teal-accent);
+    text-shadow:0 0 20px var(--teal-glow);
+  }
+  .hero-title p{
+    color:var(--text-muted);
+    font-size:1.05rem;
+    margin:0;
+  }
+  
+  /* FORM */
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    max-width:480px;
+    margin:0 auto 36px;
+  }
+  input,textarea{
+    padding:14px 16px;
+    background:var(--card-dark);
+    border:1.5px solid rgba(0,217,184,0.2);
+    border-radius:10px;
+    font-family:'Segoe UI', Arial, sans-serif;
+    font-size:1rem;
+    color:var(--text-light);
+    transition: all 0.2s ease;
+  }
+  input::placeholder,textarea::placeholder{color:var(--text-muted);}
+  input:focus,textarea:focus{
+    outline:none;
+    border-color:var(--teal-accent);
+    box-shadow:0 0 0 3px var(--teal-glow);
+  }
+  
+  /* BUTTON */
+  button{
+    padding:14px;
+    background:var(--teal-accent);
+    color:var(--bg-dark);
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:700;
+    transition: all 0.2s ease;
+  }
+  button:hover{
+    background:#00FFC6;
+    transform: translateY(-3px);
+    box-shadow:0 0 25px var(--teal-glow);
+  }
+  
+  /* SOCIALS */
+  .info{
+    margin-top:32px;
+    text-align:center;
+  }
+  .socials{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:16px;
+  }
+  .social{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 18px;
+    background:var(--card-dark);
+    border:1.5px solid rgba(0,217,184,0.3);
+    border-radius:999px;
+    color:var(--text-light);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+    transition: all 0.2s ease;
+  }
+  .social:hover{
+    background:var(--teal-accent);
+    color:var(--bg-dark);
+    border-color: var(--teal-accent);
+    box-shadow:0 0 20px var(--teal-glow);
+    transform: translateY(-2px);
+  }
+  .info p{
+    color:var(--text-muted);
+    margin:8px 0;
+    font-size:0.95rem;
+  }
+  .info a{color:var(--teal-accent);text-decoration:none;}
+  .info a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'skills' %}">Skills</a>
+    <a href="{% url 'projects' %}">Projects</a>
+    <a href="{% url 'contact' %}">Contact</a>
+</nav>
+
+<div class="content">
+  <div class="card">
+    <div class="hero-title">
+      <h1>Let's <span>Connect</span></h1>
+      <p>Project, internship, or just tech talk? My DMs are open.</p>
+    </div>
+
+    <form action="mailto:brightpraisegod966@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="info">
+      <div class="socials">
+        <a href="https://github.com/praisegod-code" target="_blank" class="social">💻 GitHub</a>
+        <a href="https://x.com/praisegod_code" target="_blank" class="social">𝕏 Twitter/X</a>
+        <a href="https://www.linkedin.com/in/praisegod-code" target="_blank" class="social">🔗 LinkedIn</a>
+        <a href="mailto:brightpraisegod966@gmail.com" class="social">📧 Email</a>
+      </div>
+      <p>Phone: +234 806 719 6456</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

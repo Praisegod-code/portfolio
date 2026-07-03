@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chinwe — About</title>
+<style>
+  :root{
+    --bg-dark: #0A0A0F;      
+    --card-dark: #15151D;    
+    --teal-accent: #00D9B8;  
+    --teal-glow: rgba(0,217,184,0.4);
+    --text-light: #E5E7EB;   
+    --text-muted: #9CA3AF;   
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI', Arial, sans-serif;
+    margin:0;
+    background:var(--bg-dark);
+    color:var(--text-light);
+    line-height:1.7;
+  }
+  
+  /* NAV WITH GREEN BORDERS */
+  nav{
+    background:rgba(10,10,15,0.7);
+    backdrop-filter: blur(10px);
+    padding:14px 40px;
+    position:sticky;
+    top:0;
+    z-index:10;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    border-bottom: 1px solid var(--card-dark);
+  }
+  nav a{
+    color:var(--text-light);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:8px 18px;
+    border:1.5px solid var(--teal-accent);
+    border-radius:999px;
+    transition: all 0.25s ease;
+  }
+  nav a:hover{
+    background:var(--teal-accent);
+    color:var(--bg-dark);
+    box-shadow:0 0 16px var(--teal-glow);
+    transform: translateY(-2px);
+  }
+
+  /* CONTENT + GLASS CARD */
+  .content{
+    padding:80px 40px;
+    max-width:800px;
+    margin:0 auto;
+  }
+  .card{
+    background:rgba(21,21,29,0.6);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:48px 40px;
+    border:1px solid rgba(0,217,184,0.15);
+    text-align:center;
+  }
+  img{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    object-fit: cover;
+    display:block;
+    margin:0 auto 24px;
+    border: 3px solid var(--teal-accent);
+    box-shadow:0 0 40px var(--teal-glow);
+  }
+  h1{
+    font-size:2.4rem;
+    margin:0 0 16px;
+    font-weight:800;
+  }
+  h1 span{
+    color:var(--teal-accent);
+    text-shadow:0 0 20px var(--teal-glow);
+  }
+  p{
+    color:var(--text-muted);
+    max-width:620px;
+    margin:0 auto 18px;
+    font-size:1.05rem;
+  }
+  
+  /* STAT PILLS INSTEAD OF UL */
+  .stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin:28px 0 32px;
+  }
+  .stat{
+    background:var(--card-dark);
+    border:1.5px solid rgba(0,217,184,0.3);
+    border-radius:999px;
+    padding:10px 20px;
+    color:var(--text-light);
+    font-weight:600;
+    font-size:0.95rem;
+    transition: all 0.2s ease;
+  }
+  .stat:hover{
+    background:var(--teal-accent);
+    color:var(--bg-dark);
+    box-shadow:0 0 20px var(--teal-glow);
+    transform: translateY(-2px);
+  }
+
+  /* BUTTONS */
+  .btn-group{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:12px 24px;
+    background:var(--teal-accent);
+    color:var(--bg-dark);
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:700;
+    transition: all 0.2s ease;
+  }
+  .btn:hover{
+    background:#00FFC6;
+    transform: translateY(-3px);
+    box-shadow:0 0 25px var(--teal-glow);
+  }
+  .btn-outline{
+    background:transparent;
+    color:var(--teal-accent);
+    border:2px solid var(--teal-accent);
+  }
+  .btn-outline:hover{
+    background:var(--teal-accent);
+    color:var(--bg-dark);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'skills' %}">Skills</a>
+    <a href="{% url 'projects' %}">Projects</a>
+    <a href="{% url 'contact' %}">Contact</a>
+</nav>
+
+<div class="content">
+  <div class="card">
+    <img src="{% static 'images/picture.jpeg' %}" alt="Praise's photo">
+    <h1>Who is <span>Praise</span>?</h1><p>I'm a Computer Science student and <strong>Vibe Coder</strong> with a strong interest in backend development, data, and AI-powered building. I'm currently learning Enterprise Python through the TechRise program, where I'm developing practical skills in Python and Django for backend web development.</p>
+
+<p>I build + ship with AI as my copilot using tools like GPT, Claude, Base44, and Lovable. My current builds are <strong>FlowMind Wellness</strong>, an AI-powered wellness platform, and <strong>BridgeIT</strong>, a learning platform for SIWES + post-SIWES Nigerian students in tech faculties like Computer Science, IT, and Computer Engineering. I enjoy learning by building, and my goal is to create reliable, practical, and user-focused solutions.</p>
+    
+    <div class="stats">
+      <span class="stat">🎓 Computer Science</span>
+      <span class="stat">⚙️ Backend & Data</span>
+      <span class="stat">📍 Final-year | SIWES</span>
+      <span class="stat">🚀 Building: BridgeIT</span>
+      <span class="stat">🚀 Building: FlowMind Wellness</span>
+    </div>
+
+    <div class="btn-group">
+      <a href="{% url 'projects' %}" class="btn">View Projects</a>
+      <a href="{% url 'contact' %}" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chinwe — Skills</title>
+<style>
+  :root{
+    --bg-dark: #0A0A0F;      
+    --card-dark: #15151D;    
+    --teal-accent: #00D9B8;  
+    --teal-glow: rgba(0,217,184,0.4);
+    --text-light: #E5E7EB;   
+    --text-muted: #9CA3AF;   
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI', Arial, sans-serif;
+    margin:0;
+    background:var(--bg-dark);
+    color:var(--text-light);
+  }
+  
+  /* NAV WITH GREEN BORDERS */
+  nav{
+    background:rgba(10,10,15,0.7);
+    backdrop-filter: blur(10px);
+    padding:14px 40px;
+    position:sticky;
+    top:0;
+    z-index:10;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    border-bottom: 1px solid var(--card-dark);
+  }
+  nav a{
+    color:var(--text-light);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:8px 18px;
+    border:1.5px solid var(--teal-accent);
+    border-radius:999px;
+    transition: all 0.25s ease;
+  }
+  nav a:hover{
+    background:var(--teal-accent);
+    color:var(--bg-dark);
+    box-shadow:0 0 16px var(--teal-glow);
+    transform: translateY(-2px);
+  }
+
+  /* CONTENT WRAPPER */
+  .content{
+    padding:80px 40px;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .hero-title{
+    text-align:center;
+    margin-bottom:48px;
+  }
+  .hero-title h1{
+    font-size:2.6rem;
+    margin:0 0 8px;
+    font-weight:800;
+  }
+  .hero-title h1 span{
+    color:var(--teal-accent);
+    text-shadow:0 0 20px var(--teal-glow);
+  }
+  .hero-title p{
+    color:var(--text-muted);
+    font-size:1.1rem;
+    margin:0;
+  }
+  
+  /* GLASS CARD GROUP */
+  .group{
+    margin-bottom:28px;
+    padding:28px;
+    background:rgba(21,21,29,0.6);
+    backdrop-filter: blur(10px);
+    border-radius:16px;
+    border:1px solid rgba(0,217,184,0.15);
+    transition: all 0.3s ease;
+  }
+  .group:hover{
+    border-color: var(--teal-accent);
+    box-shadow:0 8px 30px rgba(0,217,184,0.1);
+    transform: translateY(-4px);
+  }
+  .group h3{
+    margin:0 0 16px 0;
+    color:var(--teal-accent);
+    font-size:1.2rem;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  
+  /* PILL TAGS WITH GLOW */
+  .tag{
+    background:var(--card-dark);
+    color:var(--text-light);
+    padding:10px 18px;
+    border-radius:999px;
+    font-size:0.95rem;
+    font-weight:600;
+    border:1.5px solid rgba(0,217,184,0.3);
+    transition: all 0.2s ease;
+    cursor:default;
+  }
+  .tag:hover{
+    background:var(--teal-accent);
+    color:var(--bg-dark);
+    border-color: var(--teal-accent);
+    transform: translateY(-3px);
+    box-shadow:0 0 20px var(--teal-glow);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'skills' %}">Skills</a>
+    <a href="{% url 'projects' %}">Projects</a>
+    <a href="{% url 'contact' %}">Contact</a>
+</nav>
+
+<div class="content">
+  <div class="hero-title">
+    <h1>My <span>Tech Stack</span></h1>
+    <p>Tools & skills I’m actively building with at TechRise Cohort 3</p>
+  </div>
+
+
+    <div class="group">
+    <h3>⚙️ Backend</h3>
+    <div class="tags">
+      <span class="tag">Django</span>
+      <span class="tag">Git & GitHub</span>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3>💻 Languages</h3>
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">HTML5</span>
+      <span class="tag">CSS3</span>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3>📊 Data & Viz</h3>
+    <div class="tags">
+      <span class="tag">pandas</span>
+      <span class="tag">NumPy</span>
+      <span class="tag">Matplotlib</span>
+      <span class="tag">Seaborn</span>
+    </div>
+  </div>
+
+
+  
+
+<div class="group">
+  <h3>🚀 Other</h3>
+  <div class="tags">
+    <span class="tag">Cybersecurity Fundamentals</span>
+    <span class="tag">Project Management</span>
+    <span class="tag">Technical Writing</span>
+    
+    <!-- AI / VIBE CODING STACK -->
+    <span class="tag">Vibe Coding</span>
+    <span class="tag">AI Prompting</span>
+    <span class="tag">GPT / Claude</span>
+    <span class="tag">Base44 / Lovable</span>
+    {% comment %} <span class="tag">Lovable</span> {% endcomment %}
+    <span class="tag">Rapid Prototyping</span>
+  </div>
+</div>
+</div>p
+</body>
+</html>

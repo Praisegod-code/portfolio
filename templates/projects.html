@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chinwe — Projects</title>
+<style>
+  :root{
+    --bg-dark: #0A0A0F;      
+    --card-dark: #15151D;    
+    --teal-accent: #00D9B8;  
+    --teal-glow: rgba(0,217,184,0.4);
+    --text-light: #E5E7EB;   
+    --text-muted: #9CA3AF;   
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI', Arial, sans-serif;
+    margin:0;
+    background:var(--bg-dark);
+    color:var(--text-light);
+  }
+  
+  /* NAV WITH GREEN BORDERS */
+  nav{
+    background:rgba(10,10,15,0.7);
+    backdrop-filter: blur(10px);
+    padding:14px 40px;
+    position:sticky;
+    top:0;
+    z-index:10;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    border-bottom: 1px solid var(--card-dark);
+  }
+  nav a{
+    color:var(--text-light);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:8px 18px;
+    border:1.5px solid var(--teal-accent);
+    border-radius:999px;
+    transition: all 0.25s ease;
+  }
+  nav a:hover{
+    background:var(--teal-accent);
+    color:var(--bg-dark);
+    box-shadow:0 0 16px var(--teal-glow);
+    transform: translateY(-2px);
+  }
+  
+  /* CONTENT */
+  .content{
+    padding:80px 40px;
+    max-width:1200px;
+    margin:0 auto;
+  }
+  .hero-title{
+    text-align:center;
+    margin-bottom:48px;
+  }
+  .hero-title h1{
+    font-size:2.6rem;
+    margin:0 0 8px;
+    font-weight:800;
+  }
+  .hero-title h1 span{
+    color:var(--teal-accent);
+    text-shadow:0 0 20px var(--teal-glow);
+  }
+  .hero-title p{
+    color:var(--text-muted);
+    font-size:1.1rem;
+    margin:0;
+  }
+  
+  /* GRID + GLASS CARDS */
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap:28px;
+  }
+  .card{
+    background:rgba(21,21,29,0.6);
+    backdrop-filter: blur(10px);
+    border-radius:16px;
+    padding:16px;
+    border:1px solid rgba(0,217,184,0.15);
+    transition: all 0.3s ease;
+  }
+  .card:hover{
+    transform: translateY(-6px);
+    border-color: var(--teal-accent);
+    box-shadow:0 0 30px rgba(0,217,184,0.2);
+  }
+  .card img{
+    width:100%;
+    height:auto;
+    border-radius:12px;
+    background:var(--card-dark);
+    display:block;
+    border:1px solid rgba(0,217,184,0.1);
+    transition: all 0.3s ease;
+  }
+  .card:hover img{
+    box-shadow:0 0 20px var(--teal-glow);
+    border-color: var(--teal-accent);
+  }
+  .card h3{
+    margin:16px 0 0;
+    color:var(--text-light);
+    text-align:center;
+    font-size:1rem;
+    font-weight:600;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'skills' %}">Skills</a>
+    <a href="{% url 'projects' %}">Projects</a>
+    <a href="{% url 'contact' %}">Contact</a>
+</nav>
+
+<div class="content">
+  <div class="hero-title">
+    <h1>Matplotlib <span>Projects</span> 📊</h1>
+    <p>Data visualization mini projects @ TechRise Cohort 3</p>
+  </div>
+
+  <div class="grid">
+    
+    <div class="card">
+      <img src="{% static 'images/Figure_2.png' %}" alt="Figure 2">
+      <h3>Figure 1</h3>
+    </div>
+
+    <div class="card">
+      <img src="{% static 'images/Figure_3.png' %}" alt="Figure 3">
+      <h3>Figure 2</h3>
+    </div>
+
+    <div class="card">
+      <img src="{% static 'images/Figure_6.png' %}" alt="Figure 6">
+      <h3>Figure 3</h3>
+    </div>
+
+    <div class="card">
+      <img src="{% static 'images/Figure_10.png' %}" alt="Figure 10">
+      <h3>Figure 4</h3>
+    </div>
+
+    <div class="card">
+      <img src="{% static 'images/Figure_11.png' %}" alt="Figure 11">
+      <h3>Figure 5</h3>
+    </div>
+
+    <div class="card">
+      <img src="{% static 'images/Figure_13.png' %}" alt="Figure 13">
+      <h3>Figure 6</h3>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
